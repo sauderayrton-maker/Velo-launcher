@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Velo Launcher
+GenericName=App Launcher
+Comment=Fuzzy app launcher with the Velo cockpit aesthetic
+Exec=velo-launcher
+Icon=velo-launcher
+Terminal=false
+Categories=Utility;
+StartupNotify=false
+StartupWMClass=com.velo.Launcher
+Keywords=launcher;run;search;apps;rofi;wofi;
+NoDisplay=true

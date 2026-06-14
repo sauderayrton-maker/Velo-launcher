@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%"   stop-color="#bfe0fb"/>
+      <stop offset="50%"  stop-color="#5b9cca"/>
+      <stop offset="100%" stop-color="#2c5d82"/>
+    </linearGradient>
+    <linearGradient id="vg" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eaf5fd"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"  stop-color="#ffffff" stop-opacity="0.30"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background — same accent gradient as the rest of the Velo suite -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <rect width="64" height="64" rx="14" fill="url(#sheen)"/>
+
+  <!-- Top accent line — tachometer motif, shared with Velo Browser/Player/Files -->
+  <line x1="18" y1="13" x2="46" y2="13"
+        stroke="rgba(15,30,48,0.32)" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Search glass — launcher mark -->
+  <circle cx="28" cy="30" r="12" fill="none" stroke="url(#vg)" stroke-width="5.5"/>
+  <line x1="37" y1="39" x2="48" y2="50" stroke="url(#vg)" stroke-width="5.5" stroke-linecap="round"/>
+</svg>

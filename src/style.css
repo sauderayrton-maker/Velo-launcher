@@ -1,0 +1,112 @@
+/* Velo Launcher — Hyprland Glass (matches Velo Player / Browser / Files) */
+
+/* ── Adwaita tokens (shared with the rest of the Velo suite) ────────────── */
+@define-color accent_color           #8ab4d4;
+@define-color accent_bg_color        #4d8fb8;
+@define-color accent_fg_color        #ffffff;
+@define-color window_bg_color        #09090c;
+@define-color view_bg_color          #06060a;
+
+/* ── Window — fully transparent so only the rounded panels show ─────────── */
+window,
+window.background {
+    background-color: transparent;
+}
+
+.launcher-root {
+    background-color: transparent;
+}
+
+/* ── Results panel — floats above the search bar ─────────────────────────── */
+.results-panel {
+    margin-bottom: 10px;
+    border-radius: 18px;
+    background-color: rgba(8, 9, 14, 0.92);
+    border: 1px solid rgba(195, 215, 238, 0.08);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 12px 40px rgba(0, 0, 0, 0.55),
+        0 0 18px rgba(138, 180, 212, 0.08);
+}
+
+.results-list {
+    background-color: transparent;
+    padding: 6px;
+}
+
+.results-list > row {
+    border-radius: 12px;
+    transition: background-color 100ms ease;
+}
+.results-list > row:hover {
+    background-color: rgba(195, 215, 240, 0.06);
+}
+.results-list > row:selected {
+    background-color: rgba(138, 180, 212, 0.16);
+    box-shadow: inset 2px 0 0 @accent_color;
+}
+
+.result-row {
+    padding: 8px 12px;
+}
+
+.result-title {
+    font-size: 14px;
+    font-weight: 450;
+    color: rgba(228, 238, 252, 0.92);
+}
+.results-list > row:selected .result-title {
+    color: #ffffff;
+}
+
+.result-subtitle {
+    font-size: 11.5px;
+    color: rgba(165, 190, 218, 0.45);
+}
+.results-list > row:selected .result-subtitle {
+    color: rgba(195, 218, 242, 0.60);
+}
+
+/* ── Search bar — rounded pill, docked at the bottom centre ──────────────── */
+entry.search-bar {
+    border-radius: 26px;
+    min-width: 520px;
+    font-size: 15px;
+    padding: 13px 22px;
+    background-color: rgba(8, 9, 14, 0.92);
+    border: 1px solid rgba(205, 222, 242, 0.10);
+    color: rgba(228, 238, 252, 0.92);
+    caret-color: @accent_color;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 12px 40px rgba(0, 0, 0, 0.55),
+        0 0 18px rgba(138, 180, 212, 0.08);
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+entry.search-bar:focus-within {
+    border-color: rgba(138, 180, 212, 0.50);
+    box-shadow:
+        0 0 0 3px rgba(138, 180, 212, 0.16),
+        0 0 24px rgba(138, 180, 212, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+entry.search-bar image {
+    color: rgba(165, 190, 218, 0.55);
+}
+entry.search-bar placeholder {
+    color: rgba(165, 190, 218, 0.40);
+}
+
+/* ── Scrollbars — accent-tinted to match the cockpit palette ─────────────── */
+scrollbar slider {
+    background-color: rgba(138, 180, 212, 0.18);
+    border-radius: 8px;
+    min-width: 6px;
+    min-height: 6px;
+}
+scrollbar slider:hover {
+    background-color: rgba(138, 180, 212, 0.32);
+}
+scrollbar slider:active {
+    background-color: rgba(138, 180, 212, 0.48);
+}
