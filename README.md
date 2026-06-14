@@ -20,26 +20,56 @@ apps (with icons) slides up above the bar.
 - Anchored to the bottom of the screen via `gtk4-layer-shell`, centered
   horizontally, sized to fit its content.
 
-## Build & run
-
-```sh
-cargo build --release
-./target/release/velo-launcher
-```
-
-## Install
-
-```sh
-./install.sh
-```
-
-This installs the binary, `.desktop` entry and icon under `/usr/local`. Run
-`./uninstall.sh` (or `velo-launcher-uninstall`) to remove it again.
-
-### Dependencies
+## Requirements
 
 - GTK4 (4.12+)
 - [gtk4-layer-shell](https://github.com/wmww/gtk4-layer-shell)
+- A recent [Rust toolchain](https://rustup.rs) (stable, 2021 edition)
+
+| Component       | Arch package      | Debian/Ubuntu package            | Fedora package         |
+|------------------|-------------------|------------------------------------|--------------------------|
+| Build tools      | `base-devel`      | `build-essential`, `pkg-config`   | `gcc`, `pkg-config`     |
+| GTK4             | `gtk4`            | `libgtk-4-dev`                     | `gtk4-devel`            |
+| gtk4-layer-shell | `gtk4-layer-shell`| `libgtk4-layer-shell-dev`          | `gtk4-layer-shell-devel`|
+
+## Installation
+
+### Quick install (recommended)
+
+```bash
+git clone https://github.com/sauderayrton-maker/Velo-launcher.git
+cd Velo-launcher
+./install.sh
+```
+
+This detects your package manager, installs the system dependencies above,
+builds `velo-launcher` in release mode, and installs it plus a desktop entry
+and icon via `make install` (requires `sudo` for the final install step).
+
+### Manual build
+
+```bash
+cargo build --release                  # the launcher
+sudo make install PREFIX=/usr/local    # install + desktop entry
+```
+
+Run it with `velo-launcher`.
+
+To remove everything Velo Launcher installed:
+
+```bash
+make uninstall            # or: ./uninstall.sh
+```
+
+This prompts for `sudo` itself, removes `velo-launcher`, the desktop entry,
+and the icon (refreshing the icon cache). A copy is also installed as
+`velo-launcher-uninstall`, so it works even if you've deleted this cloned repo.
+
+### Run without installing
+
+```bash
+cargo run --release
+```
 
 ## Hyprland setup
 
